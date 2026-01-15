@@ -13,8 +13,8 @@ int main() {
     float area = 199.300; // variavel float possui valores com casas decimais, assim como foi definido a area referente a metros quadrados do estado.
     float PIB = 670.9; // mesma variavel da area, tambem foi usada para definir o PIB do estado.
     int turismo = 2333; // mesma variavel usada para definir a papulacao com valores inteiros, foi usada aqui para definir o numero de pontos turisticos 
-    float densidade = (população/area );//neste trecho usei o operador de divisao para caulcular a densidade e o pib per capita 
-    float percapta = (população/PIB ); 
+    float densidade = (população/area );//nestas linhas usei o operador de divisao "/" para caulcular a densidade e o pib per capita 
+    float percapita = (população/PIB ); 
 
 
 //CARTA Nº2
@@ -26,7 +26,7 @@ int main() {
     float PIB2 = 430.9; 
     int turismo2 = 4365;
     float densidade2 = (população2/area2 );
-    float percapta2 = (população2/PIB2 ); 
+    float percapita2 = (população2/PIB2 ); 
 
 
 
@@ -34,40 +34,54 @@ int main() {
   // Área para entrada de dados
 
   // Área para exibição dos dados da cidade
-  printf("carta Nº1\n\n"); // função printf para exibir o conteudo desejado no terminal do console. nota-se que usei mais de um \n para quebrar duas linhas 
+  printf("CARTA Nº1\n\n"); // função printf para exibir o conteudo desejado no terminal do console. nota-se que usei mais de um \n para quebrar duas linhas 
   
   printf("codigo da carta: %c\n", estado1);// usei a funcao % indicando o tipo de variavel que sera usada e logo apos a virgula selecionei a variavel
   printf("nome do estado: %s\n", nome);
   printf("populacao do estado do Parana: %i milhões de habitantes\n",população); 
   printf("a area territorial do estado é de: %.3f km²\n",area);
-  printf("PIB do estado do Parana é de %.1f bi em Reais\n",PIB);
+  printf("PIB do estado do Parana é de %.1fbi de Reais\n",PIB);
   printf("o quantidade de pontos turisticos é de: %i\n",turismo);
   printf("a densidade populacional do estado é de %.2f hab/km²\n", densidade);
-  printf("PIB per Capita %.2f de Reais\n", percapta);
-  printf("\n\n\n"); //utilizei mais de uma quebra de linha para organizar o resultado exibido terminal
+  printf("PIB per Capita é de %.2f de Reais\n", percapita);
+  printf("\n\n"); //utilizei mais de uma quebra de linha para organizar o resultado exibido terminal
 
-  printf("carta Nº2\n\n");
+  printf("CARTA Nº2\n\n");
   
   printf("codigo da carta: %c\n", estado2);
   printf("nome do estado: %s\n", nome2);
   printf("populacao do estado da Bahia: %i milhões de habitantes\n",população2);
   printf("a area territorial do estado é de: %.3f km²\n",area2);
-  printf("PIB do estado da Bahia é de %.1f bi em Reais\n",PIB2);
+  printf("PIB do estado da Bahia é de %.1fbi de Reais\n",PIB2);
   printf("o quantidade de pontos turisticos é de: %i\n",turismo2);
   printf("a densidade populacional do estado é de %.2f hab/km²\n", densidade2);
-  printf("PIB per Capita %.2f de Reais\n", percapta2);
+  printf("PIB per Capita é de %.2f de Reais\n", percapita2);
   printf("\n\n");
+ 
+  //usei o "%s" porque o valor da variavel sera apresentado em strings no terminal.
+  printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);// aqui selecionei as cartas que seram comparadas, na linha abaixo o atributo que sera comparado 
+  printf("o atributo escolhido para essa comparação foi o PIB, bora comparar?\n\n");
 
-  printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);
-  printf("o atributo escolhido para essa comparação foi o PIB, bora comparar...\n");
-
-  if (PIB>PIB2){
-    printf("a carta %s foi a vencedora!!!\n", nome);
-  }else (PIB<PIB2) {
-    printf("a carta %s foi a vencedora!!!\n", nome2);
+  if (PIB>PIB2){ //definindo a estrutura if else e os blocos de codigo a serem seguidos. 
+    printf("a carta %s foi a vencedora!!!\n\n", nome);//se verdadeiro execultara este bloco, senão ele execultara o proximo e assim ate a condição ser verdadeira.
+  }else if (PIB<PIB2) {
+    printf("a carta %s foi a vencedora!!!\n\n", nome2);
   }else {
-    printf("as cartas empataram!!!\n");
+    printf("as cartas empataram!!!\n\n");
+  }
+  //aqui fechou a primeira comparapção e a abaixo esta a proxima comparação
+  printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);
+  printf("o atributo escolhido para essa comparação foi a Densidade Populacional, bora comparar?\n\n");
+
+  if (densidade<densidade2){
+    printf("a carta %s foi a vencedora!!!\n\n", nome);
+  }else if (densidade>densidade2) {
+    printf("a carta %s foi a vencedora!!!\n\n", nome2);
+  }else {
+    printf("as cartas empataram!!!\n\n");
   }
 
+//Ps eu utilizei em algumas linhas mais de um "\n" para quebrar linhas e deixar o terminal mais organizado.
 return 0;
 } 
+
