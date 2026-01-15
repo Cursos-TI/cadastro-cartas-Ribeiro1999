@@ -56,10 +56,18 @@ int main() {
   printf("o quantidade de pontos turisticos é de: %i\n",turismo2);
   printf("a densidade populacional do estado é de %.2f hab/km²\n", densidade2);
   printf("PIB per Capita %.2f de Reais\n", percapta2);
-  printf("\n\n\n");
+  printf("\n\n");
 
+  printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);
+  printf("o atributo escolhido para essa comparação foi o PIB, bora comparar...\n");
 
-
+  if (PIB>PIB2){
+    printf("a carta %s foi a vencedora!!!\n", nome);
+  }else (PIB<PIB2) {
+    printf("a carta %s foi a vencedora!!!\n", nome2);
+  }else {
+    printf("as cartas empataram!!!\n");
+  }
 
 return 0;
 } 
