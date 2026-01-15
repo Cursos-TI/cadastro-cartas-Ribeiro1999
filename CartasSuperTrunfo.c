@@ -9,21 +9,25 @@ int main() {
   char estado1 ='A'; //definindo variavel char para o caractere referente ao estado escolhido.
     char codigo1[3] = "A1"; //variavel char com array para definir o codigo da carta escolhida ja que utilizei mais de um caractere.
     char nome[20] = "Parana"; //definindo variavel char com array para strings com nome do estado escolhido.
-    int população = 11890; // variavel int possui um valores inteiros, assim foi definido a populacao do estado escolhido.
+    int população = 818926; // variavel int possui um valores inteiros, assim foi definido a populacao do estado escolhido.
     float area = 199.300; // variavel float possui valores com casas decimais, assim como foi definido a area referente a metros quadrados do estado.
     float PIB = 670.9; // mesma variavel da area, tambem foi usada para definir o PIB do estado.
     int turismo = 2333; // mesma variavel usada para definir a papulacao com valores inteiros, foi usada aqui para definir o numero de pontos turisticos 
-
+    float densidade = (população/area );//neste trecho usei o operador de divisao para caulcular a densidade e o pib per capita 
+    float percapta = (população/PIB ); 
 
 
 //CARTA Nº2
   char estado2 = 'B'; 
     char codigo2[3] = "A2"; 
     char nome2[20] = "Bahia"; 
-    int população2 = 23059; 
+    int população2 = 830591; 
     float area2 = 567.295; 
     float PIB2 = 430.9; 
     int turismo2 = 4365;
+    float densidade2 = (população2/area2 );
+    float percapta2 = (população2/PIB2 ); 
+
 
 
 
@@ -38,6 +42,8 @@ int main() {
   printf("a area territorial do estado é de: %.3f km²\n",area);
   printf("PIB do estado do Parana é de %.1f bi em Reais\n",PIB);
   printf("o quantidade de pontos turisticos é de: %i\n",turismo);
+  printf("a densidade populacional do estado é de %.2f hab/km²\n", densidade);
+  printf("PIB per Capita %.2f de Reais\n", percapta);
   printf("\n\n\n"); //utilizei mais de uma quebra de linha para organizar o resultado exibido terminal
 
   printf("carta Nº2\n\n");
@@ -48,6 +54,8 @@ int main() {
   printf("a area territorial do estado é de: %.3f km²\n",area2);
   printf("PIB do estado da Bahia é de %.1f bi em Reais\n",PIB2);
   printf("o quantidade de pontos turisticos é de: %i\n",turismo2);
+  printf("a densidade populacional do estado é de %.2f hab/km²\n", densidade2);
+  printf("PIB per Capita %.2f de Reais\n", percapta2);
   printf("\n\n\n");
 
 
