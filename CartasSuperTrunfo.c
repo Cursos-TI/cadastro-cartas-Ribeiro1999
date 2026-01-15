@@ -60,7 +60,7 @@ int main() {
  
   //usei o "%s" porque o valor da variavel sera apresentado em strings no terminal.
   printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);// aqui selecionei as cartas que seram comparadas, na linha abaixo o atributo que sera comparado 
-  printf("o atributo escolhido para essa comparação foi o PIB, bora comparar?\n\n");
+  printf("o atributo escolhido para essa comparação foi o PIB, bora comparar?\n\n");//quem for maior vence!
 
   if (PIB>PIB2){ //definindo a estrutura if else e os blocos de codigo a serem seguidos. 
     printf("a carta %s foi a vencedora!!!\n\n", nome);//se verdadeiro execultara este bloco, senão ele execultara o proximo e assim ate a condição ser verdadeira.
@@ -69,9 +69,9 @@ int main() {
   }else {
     printf("as cartas empataram!!!\n\n");
   }
-  //aqui fechou a primeira comparapção e a abaixo esta a proxima comparação
+ 
   printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);
-  printf("o atributo escolhido para essa comparação foi a Densidade Populacional, bora comparar?\n\n");
+  printf("o atributo escolhido para essa comparação foi a Densidade Populacional, bora comparar?\n\n");//quem for menor vence!
 
   if (densidade<densidade2){
     printf("a carta %s foi a vencedora!!!\n\n", nome);
@@ -82,6 +82,7 @@ int main() {
   }
 
 //Ps eu utilizei em algumas linhas mais de um "\n" para quebrar linhas e deixar o terminal mais organizado.
+// nenhum dado fornecido neste jogo é real/atualizado.
 return 0;
 } 
 
