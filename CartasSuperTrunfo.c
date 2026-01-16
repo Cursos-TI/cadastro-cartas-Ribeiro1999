@@ -62,6 +62,8 @@ int main() {
   printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);// aqui selecionei as cartas que seram comparadas, na linha abaixo o atributo que sera comparado 
   printf("o atributo escolhido para essa comparação foi o PIB, bora comparar?\n\n");//quem for maior vence!
 
+  printf("O PIB do(a) %s é de %.2f \n",nome, PIB);
+  printf("O PIB do(a) %s é de %.2f \n", nome2,PIB2);
   if (PIB>PIB2){ //definindo a estrutura if else e os blocos de codigo a serem seguidos. 
     printf("a carta %s foi a vencedora!!!\n\n", nome);//se verdadeiro execultara este bloco, senão ele execultara o proximo e assim ate a condição ser verdadeira.
   }else if (PIB<PIB2) {
@@ -71,8 +73,10 @@ int main() {
   }
  
   printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);
-  printf("o atributo escolhido para essa comparação foi a Densidade Populacional, bora comparar?\n\n");//quem for menor vence!
-
+  printf("o atributo escolhido para essa comparação foi a Densidade Populacional, bora comparar? o menor vence.\n\n");//quem for menor vence!
+  
+  printf("densidade do(a) %s é de %.2f \n",nome, densidade);
+  printf("densidade do(a) %s é de %.2f \n", nome2,densidade2);
   if (densidade<densidade2){
     printf("a carta %s foi a vencedora!!!\n\n", nome);
   }else if (densidade>densidade2) {
