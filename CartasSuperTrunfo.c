@@ -1,92 +1,143 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
-
 int main() {
-  //CARTA Nº1
-  char estado1 ='A'; //definindo variavel char para o caractere referente ao estado escolhido.
-    char codigo1[3] = "A1"; //variavel char com array para definir o codigo da carta escolhida ja que utilizei mais de um caractere.
-    char nome[20] = "Parana"; //definindo variavel char com array para strings com nome do estado escolhido.
-    int população = 818926; // variavel int possui um valores inteiros, assim foi definido a populacao do estado escolhido.
-    float area = 199.300; // variavel float possui valores com casas decimais, assim como foi definido a area referente a metros quadrados do estado.
-    float PIB = 670.9; // mesma variavel da area, tambem foi usada para definir o PIB do estado.
-    int turismo = 2333; // mesma variavel usada para definir a papulacao com valores inteiros, foi usada aqui para definir o numero de pontos turisticos 
-    float densidade = (população/area );//nestas linhas usei o operador de divisao "/" para caulcular a densidade e o pib per capita 
-    float percapita = (população/PIB ); 
 
+  //VARIAVEL CARTA Nº1
+  char estado1 = 'A'; //usei varial char, para inserir os caracteres de identificaçao das cartas
+  char codigo1[3] = "A1"; // aqui usei colchetes definindo a quantidade de catacteres permitidos no array
+  char nome[20] = "Parana";
+  int populacao = 818926;//variavel int para definir a quantidad com numeros inteiros
+  float area = 199.300;//float para inserir numeros fracionados na variaval 
+  float PIB = 670.9;
+  int turismo = 2333;
+  float densidade = (populacao / area); //unico comparativo que vence o menor
+  float percapita = (populacao / PIB);
 
-//CARTA Nº2
-  char estado2 = 'B'; 
-    char codigo2[3] = "A2"; 
-    char nome2[20] = "Bahia"; 
-    int população2 = 830591; 
-    float area2 = 567.295; 
-    float PIB2 = 430.9; 
-    int turismo2 = 4365;
-    float densidade2 = (população2/area2 );
-    float percapita2 = (população2/PIB2 ); 
+  //VARIAVEL CARTA Nº2 
+  char estado2 = 'B';
+  char codigo2[3] = "A2";
+  char nome2[20] = "Bahia";
+  int populacao2 = 830591;
+  float area2 = 567.295;
+  float PIB2 = 430.9;
+  int turismo2 = 4365;
+  float densidade2 = (populacao2 / area2);
+  float percapita2 = (populacao2 / PIB2);
 
+  //VARIÁVEIS DO JOGO
+  int atributo1, atributo2;
+  float valor1_c1 , valor1_c2; // defini variaveis para as somas que seram feitas na compação valor1 e valor2 de cada carta 
+  float valor2_c1 , valor2_c2;
+  float soma1 , soma2;
 
-
-
-  // Área para entrada de dados
-
-  // Área para exibição dos dados da cidade
-  printf("CARTA Nº1\n\n"); // função printf para exibir o conteudo desejado no terminal do console. nota-se que usei mais de um \n para quebrar duas linhas 
-  
-  printf("codigo da carta: %c\n", estado1);// usei a funcao % indicando o tipo de variavel que sera usada e logo apos a virgula selecionei a variavel
-  printf("nome do estado: %s\n", nome);
-  printf("populacao do estado do Parana: %i milhões de habitantes\n",população); 
-  printf("a area territorial do estado é de: %.3f km²\n",area);
-  printf("PIB do estado do Parana é de %.1fbi de Reais\n",PIB);
-  printf("o quantidade de pontos turisticos é de: %i\n",turismo);
-  printf("a densidade populacional do estado é de %.2f hab/km²\n", densidade);
-  printf("PIB per Capita é de %.2f de Reais\n", percapita);
-  printf("\n\n"); //utilizei mais de uma quebra de linha para organizar o resultado exibido terminal
+  //EXIBIÇÃO DE CARTAS (nota-se que em algumas linhas utilizei mais de um (\n) para organizar melhor o terminal)
+  printf("CARTA Nº1\n\n");// printf para exibir a mensagem no terminal 
+  printf("Estado: %c\n", estado1); //definindo a especificação de formato para cada variavel correspondente 
+  printf("Nome: %s\n", nome);
+  printf("Populacao: %d\n", populacao);
+  printf("Area: %.3f km²\n", area);
+  printf("PIB: %.1f bi\n", PIB);
+  printf("Pontos Turisticos: %d\n", turismo);
+  printf("Densidade: %.2f hab/km²\n\n", densidade); 
 
   printf("CARTA Nº2\n\n");
-  
-  printf("codigo da carta: %c\n", estado2);
-  printf("nome do estado: %s\n", nome2);
-  printf("populacao do estado da Bahia: %i milhões de habitantes\n",população2);
-  printf("a area territorial do estado é de: %.3f km²\n",area2);
-  printf("PIB do estado da Bahia é de %.1fbi de Reais\n",PIB2);
-  printf("o quantidade de pontos turisticos é de: %i\n",turismo2);
-  printf("a densidade populacional do estado é de %.2f hab/km²\n", densidade2);
-  printf("PIB per Capita é de %.2f de Reais\n", percapita2);
-  printf("\n\n");
- 
-  //usei o "%s" porque o valor da variavel sera apresentado em strings no terminal.
-  printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);// aqui selecionei as cartas que seram comparadas, na linha abaixo o atributo que sera comparado 
-  printf("o atributo escolhido para essa comparação foi o PIB, bora comparar?\n\n");//quem for maior vence!
+  printf("Estado: %c\n", estado2);
+  printf("Nome: %s\n", nome2);
+  printf("Populacao: %d\n", populacao2);
+  printf("Area: %.3f km²\n", area2);
+  printf("PIB: %.1f bi\n", PIB2);
+  printf("Pontos Turisticos: %d\n", turismo2);
+  printf("Densidade: %.2f hab/km²\n\n", densidade2);
 
-  printf("O PIB do(a) %s é de %.2f \n",nome, PIB);
-  printf("O PIB do(a) %s é de %.2f \n", nome2,PIB2);
-  if (PIB>PIB2){ //definindo a estrutura if else e os blocos de codigo a serem seguidos. 
-    printf("a carta %s foi a vencedora!!!\n\n", nome);//se verdadeiro execultara este bloco, senão ele execultara o proximo e assim ate a condição ser verdadeira.
-  }else if (PIB<PIB2) {
-    printf("a carta %s foi a vencedora!!!\n\n", nome2);
-  }else {
-    printf("as cartas empataram!!!\n\n");
+  //MENU 1 
+  printf("Escolha o PRIMEIRO atributo para comparacao:\n");
+  printf("1 - Populacao\n");
+  printf("2 - Area\n");
+  printf("3 - PIB\n");
+  printf("4 - Pontos Turisticos\n");
+  printf("5 - Densidade Demografica (menor vence)\n");
+  scanf("%d", &atributo1); // scanf para capturar a escolha do jogador 
+ //PRIMEIRO MENU utilizando o switch para utilizar somente os atributos escolhidos pelo jogador 
+  switch (atributo1) {
+    case 1:
+      valor1_c1 = populacao;
+      valor1_c2 = populacao2;
+      break;
+    case 2:
+      valor1_c1 = area;
+      valor1_c2 = area2;
+      break;
+    case 3:
+      valor1_c1 = PIB;
+      valor1_c2 = PIB2;
+      break;
+    case 4:
+      valor1_c1 = turismo;
+      valor1_c2 = turismo2;
+      break;
+    case 5:
+      valor1_c1 = densidade;
+      valor1_c2 = densidade2;
+      break;
+    default: 
+      printf("Opcao invalida!\n");
   }
- 
-  printf("as cartas ecolhidas para comparaçao foram %s e %s.\n", nome,nome2);
-  printf("o atributo escolhido para essa comparação foi a Densidade Populacional, bora comparar? o menor vence.\n\n");//quem for menor vence!
-  
-  printf("densidade do(a) %s é de %.2f \n",nome, densidade);
-  printf("densidade do(a) %s é de %.2f \n", nome2,densidade2);
-  if (densidade<densidade2){
-    printf("a carta %s foi a vencedora!!!\n\n", nome);
-  }else if (densidade>densidade2) {
-    printf("a carta %s foi a vencedora!!!\n\n", nome2);
-  }else {
-    printf("as cartas empataram!!!\n\n");
+
+  //MENU 2 utilizando dinamica para nao poder utilizar o mesmo atributo 
+  printf("Escolha o SEGUNDO atributo (diferente do primeiro):\n");
+// nesse trecho estou definindo a dinamica para nao escolher o mesmo atributo 
+  if (atributo1 != 1) printf("1 - Populacao\n"); // printf não aparecera para o terminal se (atributo1 == atributo2 )somente os diferentes aparecerão.
+  if (atributo1 != 2) printf("2 - Area\n");
+  if (atributo1 != 3) printf("3 - PIB\n");
+  if (atributo1 != 4) printf("4 - Pontos Turisticos\n");
+  if (atributo1 != 5) printf("5 - Densidade Demografica\n");
+  scanf("%d", &atributo2);
+
+  if (atributo2 == atributo1) { //se for igual nao aparecerá, mas para controle de segurança se o jogador digitar manualmente aparecerá no terminal essa mensagem
+    printf("Nao e permitido escolher o mesmo atributo duas vezes!\n");
   }
 
-//Ps eu utilizei em algumas linhas mais de um "\n" para quebrar linhas e deixar o terminal mais organizado.
-// nenhum dado fornecido neste jogo é real/atualizado.
-return 0;
-} 
+  switch (atributo2) {
+    case 1:
+      valor2_c1 = populacao;
+      valor2_c2 = populacao2;
+      break;
+    case 2:
+      valor2_c1 = area;
+      valor2_c2 = area2;
+      break;
+    case 3:
+      valor2_c1 = PIB;
+      valor2_c2 = PIB2;
+      break;
+    case 4:
+      valor2_c1 = turismo;
+      valor2_c2 = turismo2;
+      break;
+    case 5:
+      valor2_c1 = densidade;
+      valor2_c2 = densidade2;
+      break;
+    default:
+      printf("Opcao invalida!\n");
+    
+  }
 
+  //  SOMA DOS ATRIBUTOS // nao cosegui deselvolver uma logica para a subtração da densidade 
+  soma1 = valor1_c1 + valor2_c1;
+  soma2 = valor1_c2 + valor2_c2;
+
+  //  RESULTADO 
+  printf("Comparacao entre %s e %s\n\n", nome, nome2);
+  printf("Soma dos atributos %s: %.2f\n", nome, soma1);
+  printf("Soma dos atributos %s: %.2f\n\n", nome2, soma2);
+
+  // Operador ternário + empate
+  (soma1 > soma2) ? printf("Vencedor: %s\n\n", nome) :
+  (soma2 > soma1) ? printf("Vencedor: %s\n\n", nome2) :
+  printf("Empate!\n\n");
+
+  return 0;
+}
+
+//obs nao consegui criar uma logica para comparar as densidades demograficas pois a soma dos dois valores estao juntas e nao consegui pensar em algo para resolver este problema tendo em vista q é unica diferente 
