@@ -28,9 +28,9 @@ int main() {
   int atributo1, atributo2;
   float valor1_c1 , valor1_c2; // defini variaveis para as somas que seram feitas na compação valor1 e valor2 de cada carta 
   float valor2_c1 , valor2_c2;
-  float soma1 , soma2;
+  float resultado1 , resultado2;
 
-  //EXIBIÇÃO DE CARTAS (nota-se que em algumas linhas utilizei mais de um (\n) para organizar melhor o terminal)
+  //EXIBIÇÃO DE CARTAS 
   printf("CARTA Nº1\n\n");// printf para exibir a mensagem no terminal 
   printf("Estado: %c\n", estado1); //definindo a especificação de formato para cada variavel correspondente 
   printf("Nome: %s\n", nome);
@@ -38,7 +38,7 @@ int main() {
   printf("Area: %.3f km²\n", area);
   printf("PIB: %.1f bi\n", PIB);
   printf("Pontos Turisticos: %d\n", turismo);
-  printf("Densidade: %.2f hab/km²\n\n", densidade); 
+  printf("Densidade: %.2f hab/km²\n\n", densidade);//(nota-se que em algumas linhas utilizei mais de um (\n) para organizar melhor o terminal) 
 
   printf("CARTA Nº2\n\n");
   printf("Estado: %c\n", estado2);
@@ -57,27 +57,37 @@ int main() {
   printf("4 - Pontos Turisticos\n");
   printf("5 - Densidade Demografica (menor vence)\n");
   scanf("%d", &atributo1); // scanf para capturar a escolha do jogador 
- //PRIMEIRO MENU utilizando o switch para utilizar somente os atributos escolhidos pelo jogador 
-  switch (atributo1) {
-    case 1:
+ //PRIMEIRO MENU  
+  switch (atributo1) {//utilizando o switch para utilizar somente os atributos escolhidos pelo jogador
+    case 1: //nome de cada case é unico para utilizar na logica logo abaxo para o jogador escolher somente uma opcao por rodada
       valor1_c1 = populacao;
       valor1_c2 = populacao2;
+      printf("voce escolheu população!\n\n");
+      resultado1 = populacao > populacao2 ? 1 : 0;//usando operador ternario para definir valores para o resultado, se verdadeiro retorna 1 se não 0
       break;
     case 2:
       valor1_c1 = area;
       valor1_c2 = area2;
+      printf("voce escolheu area!\n\n");
+      resultado1 = area>area2 ? 1 : 0;
       break;
     case 3:
       valor1_c1 = PIB;
       valor1_c2 = PIB2;
+      printf("voce escolheu PIB!\n\n");
+      resultado1 = PIB>PIB2 ? 1 : 0;
       break;
     case 4:
       valor1_c1 = turismo;
       valor1_c2 = turismo2;
+      printf("voce escolheu turismo!\n\n");
+      resultado1 = turismo>turismo2 ? 1 : 0;
       break;
     case 5:
       valor1_c1 = densidade;
       valor1_c2 = densidade2;
+      printf("voce escolheu densidade!\n\n");
+      resultado1 = densidade<densidade2 ? 1 : 0;
       break;
     default: 
       printf("Opcao invalida!\n");
@@ -101,43 +111,61 @@ int main() {
     case 1:
       valor2_c1 = populacao;
       valor2_c2 = populacao2;
+      printf("voce escolheu população!\n\n");
+      resultado2 = populacao>populacao2 ? 1 : 0;
       break;
     case 2:
       valor2_c1 = area;
       valor2_c2 = area2;
+      printf("voce escolheu area!\n\n");
+      resultado2 = area>area2 ? 1 : 0;
       break;
     case 3:
       valor2_c1 = PIB;
       valor2_c2 = PIB2;
+      printf("voce escolheu PIB!\n\n");
+      resultado2 = PIB>PIB2 ? 1 : 0;
       break;
     case 4:
       valor2_c1 = turismo;
       valor2_c2 = turismo2;
+      printf("voce escolheu turismo!\n\n");
+      resultado2 = turismo>turismo2? 1 : 0;
       break;
     case 5:
       valor2_c1 = densidade;
       valor2_c2 = densidade2;
+      printf("voce escolheu densidade!\n\n");
+      resultado2 = densidade<densidade2? 1 : 0;
       break;
     default:
       printf("Opcao invalida!\n");
     
   }
+  if (resultado1 && resultado2){//se ambos resultados forem verdadeiros (1) ele executa a carta A
+    printf("a carta %s venceu\n\n", nome);}
+    else if(resultado1!=resultado2){// se resultados forem diferentes (1:0 ou 0:1) ele empatou 
+      printf("empate!!!\n\n");}
+    else{// senão se falso (0) a carta B vence
+      printf("a carta %s venceu\n\n", nome2);
+    }
 
-  //  SOMA DOS ATRIBUTOS // nao cosegui deselvolver uma logica para a subtração da densidade 
-  soma1 = valor1_c1 + valor2_c1;
-  soma2 = valor1_c2 + valor2_c2;
+    printf("resultado1\n"); //exibição dos valores dos atributos para comparção manual 
+    printf("carta A\n");
+    printf("%.2f \n",valor1_c1);
+    printf("carta B\n");
+    printf("%.2f \n\n",valor1_c2);
+    printf("resultado2\n");
+    printf("carta A\n");
+    printf("%.2f \n",valor2_c1);
+    printf("carta B\n");
+    printf("%.2f \n\n",valor2_c2);
+  
+  
 
-  //  RESULTADO 
-  printf("Comparacao entre %s e %s\n\n", nome, nome2);
-  printf("Soma dos atributos %s: %.2f\n", nome, soma1);
-  printf("Soma dos atributos %s: %.2f\n\n", nome2, soma2);
-
-  // Operador ternário + empate
-  (soma1 > soma2) ? printf("Vencedor: %s\n\n", nome) :
-  (soma2 > soma1) ? printf("Vencedor: %s\n\n", nome2) :
-  printf("Empate!\n\n");
+ 
 
   return 0;
 }
 
-//obs nao consegui criar uma logica para comparar as densidades demograficas pois a soma dos dois valores estao juntas e nao consegui pensar em algo para resolver este problema tendo em vista q é unica diferente 
+
